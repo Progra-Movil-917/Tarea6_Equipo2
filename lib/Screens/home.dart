@@ -20,11 +20,11 @@ class _HomeScreensState extends State<HomeScreens> {
         backgroundColor: Colors.red,
         iconTheme: const IconThemeData(color: Colors.white),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Inicio'),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Inicio',
