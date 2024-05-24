@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tarea6_equipo2/controllers/drink.controller.dart';
+import 'package:flutter_tarea6_equipo2/providers/Drinks.provider.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -11,6 +14,7 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final librosProvider = Provider.of<Drinkprovider>(context);
     return Scaffold(
       body: Center(
         child: Column(
@@ -24,6 +28,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ElevatedButton(
               child: const Text('Iniciar'),
               onPressed: () {
+                DrinksController(libroProvider: librosProvider)
+                    .traerDrinksController(context)
+                    .then((value) {
+                  for (var i = 0; i < librosProvider.listDrink.length; i++) {
+                    print(librosProvider.listDrink[i].idDrink.toString());
+                  }
+                });
                 context.push('/home');
               },
             ),
