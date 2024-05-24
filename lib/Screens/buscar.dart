@@ -9,7 +9,7 @@ class BuscarScreen extends StatefulWidget {
 }
 
 class _BuscarScreenState extends State<BuscarScreen> {
-   int _currentIndex = 0;
+  int _currentIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
       _currentIndex = index;

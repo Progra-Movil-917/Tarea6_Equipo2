@@ -43,6 +43,8 @@ class _HomeScreensState extends State<HomeScreens> {
         child: Text('Inicio'),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: _onItemTapped,
+        currentIndex: _currentIndex,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
