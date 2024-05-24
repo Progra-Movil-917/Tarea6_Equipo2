@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tarea6_equipo2/controllers/Ingredientes.controller.dart';
 import 'package:flutter_tarea6_equipo2/controllers/drink.controller.dart';
 import 'package:flutter_tarea6_equipo2/providers/Drinks.provider.dart';
 import 'package:flutter_tarea6_equipo2/providers/Ingredientes.provider.dart';
@@ -27,7 +26,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               'Bienvenido a Cocktails',
               style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               child: const Text('Iniciar'),
               onPressed: () {
@@ -35,15 +34,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     .traerDrinksController(context)
                     .then((value) {
                   for (var i = 0; i < librosProvider.listDrink.length; i++) {
-                    print("Bebida: ${librosProvider.listDrink[i].strIngredient1}");
+                    print("Bebida: ${librosProvider.listDrink[i].strDrink}");
                   }
-                  
                 }).then((value) {
-
                   //  IngredientesController(ingredientesProvider: ingredientesProvider).traerIngredientesController(context, librosProvider.listDrink[1].idDrink);
-                  
-                }
-                );
+                });
                 context.push('/home');
               },
             ),
