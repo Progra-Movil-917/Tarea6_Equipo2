@@ -18,12 +18,9 @@ class _HomeScreensState extends State<HomeScreens> {
           context.go('/home');
           break;
         case 1:
-          context.go('/Categorias');
-          break;
-        case 2:
           context.go('/ListaBebidas');
           break;
-        case 3:
+        case 2:
           context.go('/Buscar');
           break;
       }
