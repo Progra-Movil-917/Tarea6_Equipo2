@@ -1,18 +1,21 @@
-import 'package:meta/meta.dart';
+// To parse this JSON data, do
+//
+//     final drinks = drinksFromJson(jsonString);
+
 import 'dart:convert';
 
-class Driks {
+Drinks drinksFromJson(String str) => Drinks.fromJson(json.decode(str));
+
+String drinksToJson(Drinks data) => json.encode(data.toJson());
+
+class Drinks {
     List<Drink> drinks;
 
-    Driks({
+    Drinks({
         required this.drinks,
     });
 
-    factory Driks.fromRawJson(String str) => Driks.fromJson(json.decode(str));
-
-    String toRawJson() => json.encode(toJson());
-
-    factory Driks.fromJson(Map<String, dynamic> json) => Driks(
+    factory Drinks.fromJson(Map<String, dynamic> json) => Drinks(
         drinks: List<Drink>.from(json["drinks"].map((x) => Drink.fromJson(x))),
     );
 
@@ -25,15 +28,15 @@ class Drink {
     String idDrink;
     String strDrink;
     dynamic strDrinkAlternate;
-    String strTags;
+    String? strTags;
     dynamic strVideo;
     String strCategory;
-    String strIba;
+    String? strIba;
     String strAlcoholic;
     String strGlass;
     String strInstructions;
     dynamic strInstructionsEs;
-    String strInstructionsDe;
+    String? strInstructionsDe;
     dynamic strInstructionsFr;
     String strInstructionsIt;
     dynamic strInstructionsZhHans;
@@ -42,25 +45,25 @@ class Drink {
     String strIngredient1;
     String strIngredient2;
     String strIngredient3;
-    String strIngredient4;
-    String strIngredient5;
-    String strIngredient6;
-    String strIngredient7;
+    String? strIngredient4;
+    dynamic strIngredient5;
+    String? strIngredient6;
+    String? strIngredient7;
     dynamic strIngredient8;
     dynamic strIngredient9;
     dynamic strIngredient10;
     dynamic strIngredient11;
-    int strIngredient12;
+    dynamic strIngredient12;
     dynamic strIngredient13;
     dynamic strIngredient14;
     dynamic strIngredient15;
     String strMeasure1;
     String strMeasure2;
     String strMeasure3;
-    String strMeasure4;
-    String strMeasure5;
-    String strMeasure6;
-    String strMeasure7;
+    String? strMeasure4;
+    String? strMeasure5;
+    String? strMeasure6;
+    String? strMeasure7;
     dynamic strMeasure8;
     dynamic strMeasure9;
     dynamic strMeasure10;
@@ -69,10 +72,10 @@ class Drink {
     dynamic strMeasure13;
     dynamic strMeasure14;
     dynamic strMeasure15;
-    String strImageSource;
-    String strImageAttribution;
+    String? strImageSource;
+    String? strImageAttribution;
     String strCreativeCommonsConfirmed;
-    DateTime dateModified;
+    DateTime? dateModified;
 
     Drink({
         required this.idDrink,
@@ -128,10 +131,6 @@ class Drink {
         required this.dateModified,
     });
 
-    factory Drink.fromRawJson(String str) => Drink.fromJson(json.decode(str));
-
-    String toRawJson() => json.encode(toJson());
-
     factory Drink.fromJson(Map<String, dynamic> json) => Drink(
         idDrink: json["idDrink"],
         strDrink: json["strDrink"],
@@ -183,7 +182,7 @@ class Drink {
         strImageSource: json["strImageSource"],
         strImageAttribution: json["strImageAttribution"],
         strCreativeCommonsConfirmed: json["strCreativeCommonsConfirmed"],
-        dateModified: DateTime.parse(json["dateModified"]),
+        dateModified: json["dateModified"] == null ? null : DateTime.parse(json["dateModified"]),
     );
 
     Map<String, dynamic> toJson() => {
@@ -237,6 +236,6 @@ class Drink {
         "strImageSource": strImageSource,
         "strImageAttribution": strImageAttribution,
         "strCreativeCommonsConfirmed": strCreativeCommonsConfirmed,
-        "dateModified": dateModified.toIso8601String(),
+        "dateModified": dateModified?.toIso8601String(),
     };
 }

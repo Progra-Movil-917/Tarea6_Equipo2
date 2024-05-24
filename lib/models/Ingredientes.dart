@@ -1,34 +1,36 @@
+
+ 
 import 'package:meta/meta.dart';
 import 'dart:convert';
-
-class Ingredientes {
+ 
+Ingredients ingredientsFromJson(String str) => Ingredients.fromJson(json.decode(str));
+ 
+String ingredientsToJson(Ingredients data) => json.encode(data.toJson());
+ 
+class Ingredients {
     List<Ingredient> ingredients;
-
-    Ingredientes({
+ 
+    Ingredients({
         required this.ingredients,
     });
-
-    factory Ingredientes.fromRawJson(String str) => Ingredientes.fromJson(json.decode(str));
-
-    String toRawJson() => json.encode(toJson());
-
-    factory Ingredientes.fromJson(Map<String, dynamic> json) => Ingredientes(
+ 
+    factory Ingredients.fromJson(Map<String, dynamic> json) => Ingredients(
         ingredients: List<Ingredient>.from(json["ingredients"].map((x) => Ingredient.fromJson(x))),
     );
-
+ 
     Map<String, dynamic> toJson() => {
         "ingredients": List<dynamic>.from(ingredients.map((x) => x.toJson())),
     };
 }
-
+ 
 class Ingredient {
     String idIngredient;
     String strIngredient;
     String strDescription;
     String strType;
     String strAlcohol;
-    String strAbv;
-
+    dynamic strAbv;
+ 
     Ingredient({
         required this.idIngredient,
         required this.strIngredient,
@@ -37,11 +39,7 @@ class Ingredient {
         required this.strAlcohol,
         required this.strAbv,
     });
-
-    factory Ingredient.fromRawJson(String str) => Ingredient.fromJson(json.decode(str));
-
-    String toRawJson() => json.encode(toJson());
-
+ 
     factory Ingredient.fromJson(Map<String, dynamic> json) => Ingredient(
         idIngredient: json["idIngredient"],
         strIngredient: json["strIngredient"],
@@ -50,7 +48,7 @@ class Ingredient {
         strAlcohol: json["strAlcohol"],
         strAbv: json["strABV"],
     );
-
+ 
     Map<String, dynamic> toJson() => {
         "idIngredient": idIngredient,
         "strIngredient": strIngredient,

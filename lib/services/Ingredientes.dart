@@ -5,13 +5,13 @@ import 'dart:async';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 
-Future<dynamic> traerDrinksService(String drink) async {
+Future<dynamic> traerIngredienteServices(String ingredients) async {
   try {
-    var response = await http.get(Uri.parse("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=$drink"));
+    var response = await http.get(Uri.parse("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=$ingredients"));
     print(response.statusCode);
     print(response.body);
     if (response.statusCode == 200) {
-      return drinksFromJson(response.body);
+      return ingredientsFromJson(response.body);
     } else if (response.statusCode == 400) {
       return 400;
     } else if (response.statusCode == 401) {
@@ -30,7 +30,7 @@ Future<dynamic> traerDrinksService(String drink) async {
       http.Client().close();
       return 4501;
     }
-    return 1200;
+    return e;
   } finally {
     http.Client().close();
   }

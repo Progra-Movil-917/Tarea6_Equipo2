@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/Ingredientes.dart';
 class IngredientesProvider with ChangeNotifier{
-  List<Ingredientes> _listIngredientes=[];
+  List<Ingredient> _listIngredients=[];
 bool _loading = false;
 bool get loading => _loading;
 
@@ -11,15 +11,15 @@ bool get loading => _loading;
 
 
 }
-List<Ingredientes> get listIngredientes =>_listIngredientes;
+List<Ingredient> get listIngredients =>_listIngredients;
 
-set listIngredientes(List<Ingredientes> value) {
-    _listIngredientes = value;
+set listIngredients(List<Ingredient> value) {
+    _listIngredients = value;
     notifyListeners();
   }
 
   resetProvider() {
-    _listIngredientes = [];
+    _listIngredients = [];
     _loading = false;
   }
 

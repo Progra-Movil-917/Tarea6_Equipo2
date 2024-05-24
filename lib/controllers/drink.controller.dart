@@ -19,7 +19,7 @@ class DrinksController {
     librosprovider.loading = true;
     final respuesta = await traerDrinksService('margarita');
 
-    if (respuesta is Driks) {
+    if (respuesta is Drinks) {
       librosprovider.listDrink = respuesta.drinks;
       librosprovider.loading = false;
       return true;

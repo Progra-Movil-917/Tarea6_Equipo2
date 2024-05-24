@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tarea6_equipo2/Router/router.dart';
 import 'package:flutter_tarea6_equipo2/providers/Drinks.provider.dart';
+import 'package:flutter_tarea6_equipo2/providers/Ingredientes.provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class MainApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => Drinkprovider()),
+        ChangeNotifierProvider(create: (context) => IngredientesProvider()),
       ],
       child: MaterialApp.router(
         routerConfig: mainrouter,
