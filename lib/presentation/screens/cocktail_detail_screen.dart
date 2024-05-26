@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../models/cocktail_model.dart';
+import 'package:tarea6_equipo2/domain/model/drinks.dart';
+
+// IMPORTANTE: home.dart ES EL WIDGET PARA BUSCAR BEBIDAS
 
 class CocktailDetailScreen extends StatelessWidget {
   final Cocktail cocktail;
