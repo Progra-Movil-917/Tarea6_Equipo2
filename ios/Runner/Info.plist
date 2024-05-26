@@ -5,7 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
+<<<<<<< HEAD
 	<string>Cocktail App</string>
+=======
+	<string>Flutter Tarea6 Equipo2</string>
+>>>>>>> 3218bcc09a50db1e6e117c053a1272c324fb9b7e
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +17,11 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
+<<<<<<< HEAD
 	<string>cocktail_app</string>
+=======
+	<string>flutter_tarea6_equipo2</string>
+>>>>>>> 3218bcc09a50db1e6e117c053a1272c324fb9b7e
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

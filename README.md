@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # cocktail_app
 
 A new Flutter project.
@@ -14,3 +15,8 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# flutter_tarea6_equipo2
+
+A new Flutter project.
+>>>>>>> 3218bcc09a50db1e6e117c053a1272c324fb9b7e
