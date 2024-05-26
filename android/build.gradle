@@ -5,20 +5,12 @@ allprojects {
     }
 }
 
-<<<<<<< HEAD
 rootProject.buildDir = "../build"
-=======
-rootProject.buildDir = '../build'
->>>>>>> 3218bcc09a50db1e6e117c053a1272c324fb9b7e
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 subprojects {
-<<<<<<< HEAD
     project.evaluationDependsOn(":app")
-=======
-    project.evaluationDependsOn(':app')
->>>>>>> 3218bcc09a50db1e6e117c053a1272c324fb9b7e
 }
 
 tasks.register("clean", Delete) {

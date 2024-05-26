@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 name: cocktail_app
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
@@ -91,27 +90,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-=======
-name: flutter_tarea6_equipo2
-description: "A new Flutter project."
-publish_to: 'none'
-version: 0.1.0
-
-environment:
-  sdk: '>=3.3.4 <4.0.0'
-
-dependencies:
-  flutter:
-    sdk: flutter
-  go_router: ^14.1.3
-  http: ^1.2.1
-  provider: ^6.1.2
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^3.0.0
-
-flutter:
-  uses-material-design: true
->>>>>>> 3218bcc09a50db1e6e117c053a1272c324fb9b7e
